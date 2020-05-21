@@ -1,0 +1,35 @@
+{
+   "background": {
+      "browser_action": {
+
+      },
+      "persistent": true,
+      "scripts": [ "background.js" ]
+   },
+   "content_scripts": [ {
+      "js": [ "firebase.js", "auth.js" ],
+      "matches": [ "https://*/*", "http://*/*" ]
+   } ],
+   "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js; object-src 'self'",
+   "description": "Automatically refreshes, marks, books and notifies user about the new load",
+   "icons": {
+      "128": "images/logo128.png",
+      "16": "images/logo16.png",
+      "48": "images/logo48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkmQgf1Ta0iS9lKcpneuPeLeNz+p051hkc2PqXrYGnnwdZeP2plw1/ntqyq3ADci9WQ/hjsTW4T7/gK+Q7AzABA7DLzVageMacrGiuwvqnq2Q8S6d9ZEqs2IxWzJ199lACGJrkB/sr4c6a/QaQWrTrhuxZPHYyIxFjCUo6+sChYuoDRMS+9S5vQFwuQ7e6N/TuZJWCV27hsSv7DCmXVmq/ReAW1MQ+VfN9HOtH4CNlI5FS5kTPBtDl1WkdM6S4QK+FJnnHWz6SAaaTxhw5V4XlBE5O7ewQMkniD44EsqdI4GCbpi+oWWzDQfDCFktNx7tL/MAIo+MwjYjdvQAc9a6swIDAQAB",
+   "manifest_version": 2,
+   "name": "AmazonBooker",
+   "page_action": {
+      "default_icon": {
+         "128": "images/logo128.png",
+         "16": "images/logo16.png",
+         "48": "images/logo48.png"
+      },
+      "default_popup": "auth.html"
+   },
+   "permissions": [ "activeTab", "declarativeContent", "storage", "identity" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0",
+   "web_accessible_resources": [ "audio/bell.mp3" ]
+}
